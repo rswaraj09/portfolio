@@ -11,7 +11,6 @@ import { VelocityScroll } from '../components/VelocityScroll';
 import { ButtonMovingBorder } from '../components/MovingBorderButton';
 import ProjectSection from '../components/ProjectSection';
 import Contact from '../components/Contact';
-import VideoPlayer from '../components/VideoPlayer';
 import { useTheme } from '../contexts/ThemeContext';
 
 const Home = () => {
@@ -105,9 +104,6 @@ const Home = () => {
                     )}
                 </div>
             </section>
-
-            {/* Video Section - Auto-plays on scroll */}
-            <VideoPlayer />
 
             <section
                 id="about"

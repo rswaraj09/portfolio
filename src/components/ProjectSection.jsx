@@ -21,6 +21,24 @@ import { useNavbar } from '../contexts/NavbarContext';
 // ===================================
 const dummyProjects = [
   {
+    title: "Skill Bridge - MERN + AI Resume Builder",
+    description: "A modern MERN + AI powered platform designed to optimize the job application process. Leverages artificial intelligence to help users build, analyze, and refine resumes with smart resume builder, AI-powered analysis, interview prep, skill gap analysis, and ATS-friendly formatting. Features interactive dashboard with visualization, secure JWT authentication, and seamless file management.",
+    tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Framer Motion", "AI Integration", "JWT"],
+    link: "https://github.com/rswaraj09/skill-bridge",
+    liveDemo: "https://skill-bridge-resume.vercel.app/",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
+    category: "Web/Apps",
+  },
+  {
+    title: "Voice Assistant - Nora",
+    description: "Advanced AI-powered voice assistant built with Python featuring voice recognition, hotword detection, web-based UI, WhatsApp automation, email handling, media streaming, and conversational AI using LLMs. Capable of opening system applications, managing contacts, and executing complex automation tasks with natural language understanding.",
+    tech: ["Python", "Eel", "SQLite", "SpeechRecognition", "PyAutoGUI", "Google Generative AI", "OpenCV", "pyttsx3"],
+    link: "https://github.com/rswaraj09/Voice-Assistant",
+    liveDemo: "https://voice-assistant-os.vercel.app/",
+    image: "https://images.unsplash.com/photo-1677442d019cecf8f69f4a5c7e225b1c491fc3f5?q=80&w=2070&auto=format&fit=crop",
+    category: "Web/Apps",
+  },
+  {
     title: "Locality Connector",
     description: "A scalable location-based platform designed to address real-world discovery challenges. Implemented clean modular architecture, optimized MongoDB database queries, and designed RESTful APIs to deliver high performance.",
     tech: ["React", "Node.js", "MongoDB", "JavaScript"],
@@ -237,9 +255,9 @@ const ProjectDetailModal = ({ project, onClose }) => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-white/10">
-              {project.link !== '#' && (
+              {project.liveDemo && (
                 <a
-                  href={project.link}
+                  href={project.liveDemo}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 px-6 py-4 dark:bg-gradient-to-r dark:from-cyan-600 dark:to-emerald-600 dark:hover:from-cyan-500 dark:hover:to-emerald-500 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-cyan-500/30 hover:-translate-y-1"
@@ -249,10 +267,8 @@ const ProjectDetailModal = ({ project, onClose }) => {
                 </a>
               )}
 
-              {/* Assuming GitHub link might be stored in a different field or same link if generic */}
-              {/* For now using project.link as fallback, ideally should have github specific field passed */}
               <a
-                href={project.link} // Adjust if you have a specific github_url field
+                href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 px-6 py-4 dark:bg-slate-800 bg-slate-700 dark:hover:bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-xl dark:border-slate-700 border-slate-600 transition-all duration-300 hover:-translate-y-1"
@@ -391,7 +407,6 @@ const CertificatePreviewModal = ({ certificate, onClose }) => {
 // ===================================
 function ProjectSection() {
   const [activeTab, setActiveTab] = useState('Projects');
-  const [projectCategory, setProjectCategory] = useState('Web/Apps');
   const [previewCertificate, setPreviewCertificate] = useState(null);
   const [previewProject, setPreviewProject] = useState(null); // ✨ NEW STATE
   const { hideNavbar, showNavbar } = useNavbar();
@@ -422,7 +437,7 @@ function ProjectSection() {
   ];
 
   const activeProjects = dummyProjects;
-  const filteredProjects = activeProjects.filter((p) => p.category === projectCategory);
+  const filteredProjects = activeProjects;
   const activeCertificates = userCertificates;
 
   const handleShowMore = () => {
@@ -506,11 +521,6 @@ function ProjectSection() {
             >
               {activeTab === 'Projects' && (
                 <>
-                  <div className="flex justify-center gap-4 mb-8">
-                    <button className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === 'Web/Apps' ? 'bg-cyan-700/80 text-white border-cyan-400 shadow-cyan-500/10 shadow-lg' : 'bg-slate-900/60 text-cyan-200 border-slate-700 hover:bg-cyan-800/40 hover:text-white'}`} onClick={() => setProjectCategory('Web/Apps')}>Web/Apps</button>
-                    <button className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === '3D Design' ? 'bg-cyan-700/80 text-white border-cyan-400 shadow-cyan-500/10 shadow-lg' : 'bg-slate-900/60 text-cyan-200 border-slate-700 hover:bg-cyan-800/40 hover:text-white'}`} onClick={() => setProjectCategory('3D Design')}>3D Design</button>
-                  </div>
-
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredProjects.length > 0 ? (
                       filteredProjects.map((p, i) => (

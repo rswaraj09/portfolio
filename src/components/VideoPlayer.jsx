@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
+import RS_Video from '../assets/Video/RS.mp4';
 
 const VideoPlayer = () => {
   const videoRef = useRef(null);
@@ -63,7 +64,7 @@ const VideoPlayer = () => {
               : '0 8px 32px rgba(0, 0, 0, 0.1)',
           }}
         >
-          <source src="/Video/RS.mp4" type="video/mp4" />
+          <source src={RS_Video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
