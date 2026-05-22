@@ -46,7 +46,8 @@ const VideoIntro = ({ onVideoEnd }) => {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black overflow-hidden"
+      style={{ width: '100vw', height: '100vh' }}
     >
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-black z-10">
@@ -60,10 +61,11 @@ const VideoIntro = ({ onVideoEnd }) => {
       
       <video
         ref={videoRef}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-contain sm:object-cover"
         autoPlay
         muted={isMuted}
         playsInline
+        webkit-playsinline="true"
       >
         <source src={RS_Video} type="video/mp4" />
         Your browser does not support the video tag.
@@ -72,11 +74,11 @@ const VideoIntro = ({ onVideoEnd }) => {
       {/* Mute/Unmute Button */}
       <motion.button
         onClick={toggleMute}
-        className="fixed bottom-8 right-8 z-50 p-4 rounded-full bg-black/50 hover:bg-black/70 text-white transition-all duration-300"
+        className="fixed bottom-6 sm:bottom-8 right-6 sm:right-8 z-50 p-3 sm:p-4 rounded-full bg-black/50 hover:bg-black/70 text-white transition-all duration-300"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        {isMuted ? <FaVolumeMute size={24} /> : <FaVolumeUp size={24} />}
+        {isMuted ? <FaVolumeMute size={20} className="sm:w-6 sm:h-6" /> : <FaVolumeUp size={20} className="sm:w-6 sm:h-6" />}
       </motion.button>
     </motion.div>
   );

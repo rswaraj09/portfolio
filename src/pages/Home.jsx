@@ -41,7 +41,7 @@ const Home = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
             transition={{ duration: 0.5 }}
-            className="relative z-10 px-8 max-w-7xl mx-auto"
+            className="relative z-10 px-4 sm:px-8 max-w-7xl mx-auto"
         >
             <button
                 onClick={toggle3dAssets}
@@ -55,8 +55,8 @@ const Home = () => {
                 <FaCube className="h-5 w-5" />
             </button>
 
-            <section id="home" className="flex flex-col md:flex-row items-center gap-10 pt-20 pb-16 lg:pt-0 lg:pb-20">
-                <div className="flex-1 dark:text-white text-slate-800 space-y-6 pt-16 md:pt-40 order-last md:order-none text-center md:text-left flex flex-col items-center md:items-start">
+            <section id="home" className="flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-8 md:gap-10 pt-12 sm:pt-16 pb-12 lg:pt-0 lg:pb-20">
+                <div className="flex-1 dark:text-white text-slate-800 space-y-4 sm:space-y-6 pt-8 sm:pt-16 md:pt-40 order-last md:order-none text-center md:text-left flex flex-col items-center md:items-start w-full px-4 sm:px-0">
                     <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}>
                         <AnimatedGradientTextDemo />
                     </motion.div>
@@ -64,7 +64,7 @@ const Home = () => {
                         initial={{ opacity: 0, x: -60 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.7, delay: 0.25, ease: "easeOut" }}
-                        className="text-4xl md:text-4xl font-moderniz font-bold leading-tight select-none main-heading"
+                        className="text-2xl sm:text-3xl md:text-4xl font-moderniz font-bold leading-tight select-none main-heading"
                         style={{
                             color: theme === 'dark' ? "#00ffdc" : "#0f172a",
                             textShadow: theme === 'dark'
@@ -84,21 +84,21 @@ const Home = () => {
                     <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}>
                         <Skills />
                     </motion.div>
-                    <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1.0, ease: "easeOut" }} className="flex flex-row gap-4 mt-8">
-                        <a href="https://github.com/rswaraj09" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" className="group relative flex h-12 w-12 items-center justify-center rounded-full border dark:border-slate-700 border-slate-200 dark:bg-slate-900/[0.8] bg-white text-slate-600 dark:text-white transition-all duration-300 hover:border-cyan-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:shadow-md dark:hover:shadow-[0_0_24px_2px_#00ffdc]">
-                            <FaGithub className="h-6 w-6 dark:text-slate-400 text-slate-600 transition-all duration-300 group-hover:text-cyan-600 dark:group-hover:text-cyan-300" />
+                    <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1.0, ease: "easeOut" }} className="flex flex-row gap-2 sm:gap-4 mt-6 sm:mt-8">
+                        <a href="https://github.com/rswaraj09" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" className="group relative flex h-10 sm:h-12 w-10 sm:w-12 items-center justify-center rounded-full border dark:border-slate-700 border-slate-200 dark:bg-slate-900/[0.8] bg-white text-slate-600 dark:text-white transition-all duration-300 hover:border-cyan-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:shadow-md dark:hover:shadow-[0_0_24px_2px_#00ffdc]">
+                            <FaGithub className="h-5 sm:h-6 w-5 sm:w-6 dark:text-slate-400 text-slate-600 transition-all duration-300 group-hover:text-cyan-600 dark:group-hover:text-cyan-300" />
                         </a>
-                        <a href="https://linkedin.com/in/ritik-swaraj-b54812314" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="group relative flex h-12 w-12 items-center justify-center rounded-full border dark:border-slate-700 border-slate-200 dark:bg-slate-900/[0.8] bg-white text-slate-600 dark:text-white transition-all duration-300 hover:border-cyan-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:shadow-md dark:hover:shadow-[0_0_24px_2px_#00ffdc]">
-                            <FaLinkedin className="h-6 w-6 dark:text-slate-400 text-slate-600 transition-all duration-300 group-hover:text-cyan-600 dark:group-hover:text-cyan-300" />
+                        <a href="https://linkedin.com/in/ritik-swaraj-b54812314" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="group relative flex h-10 sm:h-12 w-10 sm:w-12 items-center justify-center rounded-full border dark:border-slate-700 border-slate-200 dark:bg-slate-900/[0.8] bg-white text-slate-600 dark:text-white transition-all duration-300 hover:border-cyan-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:shadow-md dark:hover:shadow-[0_0_24px_2px_#00ffdc]">
+                            <FaLinkedin className="h-5 sm:h-6 w-5 sm:w-6 dark:text-slate-400 text-slate-600 transition-all duration-300 group-hover:text-cyan-600 dark:group-hover:text-cyan-300" />
                         </a>
-                        <a href="mailto:contactritikswaraj@gmail.com" aria-label="Email Contact" className="group relative flex h-12 w-12 items-center justify-center rounded-full border dark:border-slate-700 border-slate-200 dark:bg-slate-900/[0.8] bg-white text-slate-600 dark:text-white transition-all duration-300 hover:border-cyan-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:shadow-md dark:hover:shadow-[0_0_24px_2px_#00ffdc]">
-                            <FaEnvelope className="h-5 w-5 dark:text-slate-400 text-slate-600 transition-all duration-300 group-hover:text-cyan-600 dark:group-hover:text-cyan-300" />
+                        <a href="mailto:contactritikswaraj@gmail.com" aria-label="Email Contact" className="group relative flex h-10 sm:h-12 w-10 sm:w-12 items-center justify-center rounded-full border dark:border-slate-700 border-slate-200 dark:bg-slate-900/[0.8] bg-white text-slate-600 dark:text-white transition-all duration-300 hover:border-cyan-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:shadow-md dark:hover:shadow-[0_0_24px_2px_#00ffdc]">
+                            <FaEnvelope className="h-5 sm:h-6 w-5 sm:w-6 dark:text-slate-400 text-slate-600 transition-all duration-300 group-hover:text-cyan-600 dark:group-hover:text-cyan-300" />
                         </a>
                     </motion.div>
                 </div>
 
-                {/* 3. Render Lanyard secara kondisional */}
-                <div className="hidden lg:flex flex-1 justify-center h-[600px] w-full order-first lg:order-none">
+                {/* 3. Render Lanyard/ProfileCard on all screen sizes */}
+                <div className="flex lg:flex-1 justify-center w-full order-first lg:order-none h-[400px] sm:h-[500px] lg:h-[600px]">
                     {is3dEnabled && (
                         <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} fov={18} transparent={true} />
                     )}
